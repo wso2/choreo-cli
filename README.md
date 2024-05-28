@@ -34,3 +34,7 @@ choreo list projects
 ```bash
 choreo describe <project|component>
 ```
+
+## Update Policy
+Please refer to our [Update Policy document](./UpdatePolicy.md) for more information
+

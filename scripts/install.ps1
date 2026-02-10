@@ -94,7 +94,7 @@ function Main {
       Start-Process -FilePath "$env:comspec" -ArgumentList "/c", "mklink", $WDP_EXE -Verb runAs -WorkingDirectory "$env:windir"
     }
 
-    Write-Output "wdp cli was installed successfully to $WDP_EXE"
+    Write-Output "WSO2 Developer Platform CLI was installed successfully to $WDP_EXE"
     Write-Output "Run 'wdp --help' to get started"
 }
 

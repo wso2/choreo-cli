@@ -96,10 +96,13 @@ main() {
 
     if [ -z $PROFILE ]; then
         echo "No profile detected"
-        echo "Please add the following line to the correct file yourself"
+        echo "Please add the following lines to the correct profile file yourself:"
+        echo ""
         echo "export WDP_DIR=$WDP_DIR" >> $PROFILE
         echo "export PATH=$WDP_DIR/bin:\$PATH" >> "$PROFILE"
         echo "[ -f $WDP_DIR/wdp-completion ] && source $WDP_DIR/wdp-completion" >> "$PROFILE"
+        echo ""
+        echo "Then open a new terminal and run 'wdp --help' to get started."
     else
         echo "Detected profile: $PROFILE"
         if ! grep -qc "$WDP_DIR" "$PROFILE"; then
@@ -109,16 +112,17 @@ main() {
             echo "export PATH=$WDP_DIR/bin:\$PATH" >> "$PROFILE"
             echo "[ -f \$WDP_DIR/bin/wdp-completion ] && source \$WDP_DIR/bin/wdp-completion" >> "$PROFILE"
             echo "# wdp cli end" >> $PROFILE
-            echo "wdp entry was added to $PROFILE"
-            echo -e "\nPlease run 'source $PROFILE' to update your current session"
-            echo -e "or open a new terminal\n"
+            echo ""
+            echo "WSO2 Developer Platform CLI was installed successfully 🎉"
+            echo ""
+            echo "Run 'source $PROFILE' or open a new terminal, then run 'wdp --help' to get started."
         else
-            echo "wdp entry is already in $PROFILE"
+            echo ""
+            echo "WSO2 Developer Platform CLI was installed successfully 🎉"
+            echo ""
+            echo "Run 'wdp --help' to get started."
         fi
     fi
-
-    # source $PROFILE
-    echo "wdp was installed successfully 🎉"
 }
 
 detect_profile() {
